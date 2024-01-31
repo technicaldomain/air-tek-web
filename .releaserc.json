@@ -1,0 +1,13 @@
+{
+  "branches": [
+    "master",
+    "main"
+  ],
+  "debug": true,
+  "ci": true,
+  "dryRun": false,
+  "plugins": [
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/github"
+  ]
+}
