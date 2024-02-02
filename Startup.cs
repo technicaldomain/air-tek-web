@@ -26,6 +26,7 @@ namespace infra_web
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHealthChecks();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +48,7 @@ namespace infra_web
                     var apiResult = await apiResponse.Content.ReadAsStringAsync();
                     await context.Response.WriteAsync(apiResult);
                 });
+                endpoints.MapHealthChecks("/healthz");
             });
         }
     }
